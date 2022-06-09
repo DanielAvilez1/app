@@ -18,7 +18,6 @@ function displayUsers(usersArray){
                 <td>${user.payment}</td>
                 <td style="background-color:${user.color}">${user.color}</td>
                 
-                <td>
             </tr>
             `;
    
