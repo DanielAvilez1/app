@@ -9,10 +9,16 @@ function displayUsers(usersArray){
     //create the row = `<>${}`
         row=`
             <tr>
-                <td>${user.firstName}</td>
-                <td>${user.age}</td>
                 <td>${user.email}</td>
+                <td>${user.firstName}</td> 
+                <td>${user.lastName}</td>
+                <td>${user.age}</td>
+                <td>${user.address}</td>
+                <td>${user.phoneNumber}</td>
+                <td>${user.payment}</td>
                 <td style="background-color:${user.color}">${user.color}</td>
+                
+                <td>
             </tr>
             `;
    
