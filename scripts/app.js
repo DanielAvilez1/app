@@ -1,10 +1,35 @@
 //object constructor
+function User(email,password,firstname,lastname,age,address,phoneNumber,payment,color){
+    this.email=email;
+    this.password=password;
+    this.firstName=firstname;
+    this.lastName=lastname;
+    this.age=age;
+    this.address=address;
+    this.phoneNumber=phoneNumber;
+    this.payment=payment;
+    this.color=color;
+}
+//register funtion
+function register(){
+    let userName= $("#txtEmail").val();
+    let userPass= $("#txtPassword").val();
+    let userFirstName= $("#txtFirstName").val();
+    let userLastName= $("#txtLastName").val();
+    let userAge = $("#txtAge").val();
+    let userAddress = $("#txtAddress").val();
+    let userPhoneNumber= $("#txtPhoneNumber").val();
+    let userPayment= $("#txtPayment").val();
+    let userColor= $("#txtColor").val();
 
 
+    //create the obj
+    let newUser = new User(userName,userPass,userFirstName,userLastName,userAge,userAddress,userPhoneNumber,userPayment,userColor);
+    //clear the inputs
+    $(`input`).val("");
+    saveUser(newUser);
 
-
-
-
+}
 
 
 function isValid(user){
@@ -21,7 +46,7 @@ function isValid(user){
         console.log("Please add an Password");
         $("txtPassword").addClass("input-error")
     }
-    if(user.firstName.length==0){
+    if(user.firstname.length==0){
         valid=false;
         console.log("Please add an First Name");
         $("txtFirstName").addClass("input-error")
@@ -35,22 +60,7 @@ function isValid(user){
     
 }
 
-//register function
-function register(){
-    let userName= $("#txtEmail").val();
-    let userPass= $("#txtPasssword").val();
-    let userFirstName= $("txtFirstName").val();
-    let userLastName= $("txtLastName").val()
 
-    //creating the obj
-    let newUser= new User(userName,userPass,userFirstName,userLastName);
-    if(isValid(newUser)==true){
-        //console.log(newUser);
-        saveUser(newUser)==true;
-        //clear the inputs
-        $("input").val("");
-    }
-}
 
 function init(){
     console.log("Register");
@@ -62,3 +72,6 @@ function init(){
         }
     });
 }
+
+
+window.onload=init;

@@ -1,73 +1,78 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+.site-init{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 30vh;
+    background-color: blue;
+    color: black;
+}
+.site-init h1{
+    font-weight: 300;
+}
+nav a{
+    color: black;
+    text-decoration: none;
+    margin-right: 2rem;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
+main .login-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #dedede;
+    height: 10rem;
+    width: 20rem;
+    padding: 1rem;
+    margin: 1rem;
+}
+input{
+    width: 15rem;
+    padding: 5px;
+    margin-bottom: 1rem;
+}
+.input:first-of-type{
+    margin-top: 2rem;
+}
+button{
+    padding: 0.5rem;
+    background-color: black;
+    border: none;
+    color: white;
+}
+
+/*this is for register page*/
+.site-register{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 10vh;
+    background-color: blue;
+    color: black;
+    flex-direction: column;
+    
+}
+.form-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: black;
+    flex-direction: column;
+}
 
 
 .input-error{
