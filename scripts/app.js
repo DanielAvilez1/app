@@ -25,9 +25,16 @@ function register(){
 
     //create the obj
     let newUser = new User(userName,userPass,userFirstName,userLastName,userAge,userAddress,userPhoneNumber,userPayment,userColor);
+    
+    if(isValid(newUser)==true){
+        saveUser(newUser);
+        hideError();
+    
     //clear the inputs
     $(`input`).val("");
-    saveUser(newUser);
+    }else{
+        displayError("Please, complete all the fields")
+    }
 
 }
 
@@ -38,29 +45,49 @@ function isValid(user){
     let valid=true;
     if(user.email.length==0){
         valid=false;
-        console.log("Please add an email");
-        $("txtEmail").addClass("input-error")
+        
+        $("#txtEmail").addClass("input-error")
     }
-    if(user.password.length==0){
+    if(user.password.length<6){
         valid=false;
-        console.log("Please add an Password");
-        $("txtPassword").addClass("input-error")
+        $("#txtPassword").addClass("input-error")
     }
-    if(user.firstname.length==0){
+    if(user.firstName.length==0){
         valid=false;
-        console.log("Please add an First Name");
-        $("txtFirstName").addClass("input-error")
+        $("#txtFirstName").addClass("input-error")
     }
-    if(user.lastname.length==0){
+    if(user.lastName.length==0){
         valid=false;
-        console.log("Please add an Last Name");
-        $("txtLastName").addClass("input-error")
+        $("#txtLastName").addClass("input-error")
     }
     return valid;
     
 }
 
+function validatePass(){
+       console.log("Validate pass");
+       //get the value of the input
+       let txtPass= $("#txtPassword");
+       let password=txtPass.val();
+       console.log(password);
 
+       if(password.length<6){
+           txtPass.css("background","#ff9898");//jquery changes the css
+           displayError("the password is too short:(")
+       }else{
+           txtPass.css("background","#64cc66");
+           hideError();
+           
+       }
+    //is the password less than 6 characters
+   
+}
+function displayError(msg){
+    $("#alertError").addClass("hide")
+}
+function hideError(){
+    $("alertError").addClass("hide");
+}
 
 function init(){
     console.log("Register");
@@ -71,6 +98,7 @@ function init(){
             register();
         }
     });
+    $("#txtPassword").keyup(validatePass); //it is executed everytime that key is up
 }
 
 

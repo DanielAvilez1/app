@@ -78,3 +78,11 @@ button{
 .input-error{
     border: 1px solid red;
 }
+.alert-error{
+    border: 1px solid orange;
+    color: red;
+    background-color: orange;
+}
+.hide{
+    display: none;
+}
